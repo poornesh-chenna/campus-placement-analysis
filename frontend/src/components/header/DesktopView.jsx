@@ -1,20 +1,18 @@
-import styles from './navbar.module.css';
 import { Container } from '@mui/material';
-const DesktopView = () => {
+import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import styles from './navbar.module.css';
+
+const DesktopView = ({ NAV_PAGES }) => {
     return (
         <div>
             <div
                 style={{
-                    height: '10vh',
-                    maxHeight: '5rem',
-                    //    backgroundColor: 'hsla(0, 100%, 100%, 0.9)',
-                    backgroundColor: 'white',
+                    minHeight: '60.737px',
+
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    position: 'sticky',
-
-                    top: 0,
                 }}
             >
                 <Container
@@ -33,9 +31,31 @@ const DesktopView = () => {
                             columnGap: '3rem',
                         }}
                     >
-                        <div className={styles.item}>Insights</div>
-                        <div className={styles.item}>Campus analysis</div>
-                        <div className={styles.item}>Placement prediction</div>
+                        {NAV_PAGES.map((nav, idx) => {
+                            return (
+                                <NavLink
+                                    className={styles.item}
+                                    style={({ isActive }) => {
+                                        const mystyles = {
+                                            textDecoration: 'none',
+                                            color: 'inherit',
+                                        };
+                                        return isActive
+                                            ? {
+                                                  ...mystyles,
+                                                  '--_i': '100%',
+                                                  transition:
+                                                      '0.3s, -webkit-mask-size 0.3s 0.3s',
+                                              }
+                                            : mystyles;
+                                    }}
+                                    key={idx}
+                                    to={nav.path}
+                                >
+                                    <div>{nav.name}</div>
+                                </NavLink>
+                            );
+                        })}
                     </div>
                 </Container>
             </div>
@@ -43,4 +63,7 @@ const DesktopView = () => {
     );
 };
 
+DesktopView.propTypes = {
+    NAV_PAGES: PropTypes.array,
+};
 export default DesktopView;
