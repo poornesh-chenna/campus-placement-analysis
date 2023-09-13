@@ -747,16 +747,19 @@ export const Student = () => {
                                         <GiMedallist /> Chances Of Getting
                                         Placed:{' '}
                                         <span style={{ color: '#9d44c0' }}>
-                                            {
+                                            {Number(
                                                 predictedData.placement_probability
-                                            }
+                                            ).toFixed(2)}
                                             %
                                         </span>
                                     </h2>
                                     <h1>
                                         <TfiHandPointRight /> Predicted Salary:{' '}
                                         <span style={{ color: '#9d44c0' }}>
-                                            {predictedData.predicted_salary}LPA
+                                            {Number(
+                                                predictedData.predicted_salary
+                                            ).toFixed(2)}
+                                            LPA
                                         </span>
                                     </h1>
                                     <div>
