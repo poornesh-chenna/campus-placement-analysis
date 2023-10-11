@@ -212,7 +212,7 @@ def get_predicted_data(dataset):
         probabilities = placed_model.predict_proba(
             placed_prediction_feature_data)
         for prob in probabilities:
-            isplaced_probability.append(prob[1])
+            isplaced_probability.append(prob[1]*100)
 
     # salary_prediction
 

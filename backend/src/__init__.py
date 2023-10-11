@@ -106,7 +106,7 @@ def create_app(test_config=None):
                               resume_file_binary, "application/pdf")}
             payload = {
                 "wait": "true",
-                "collection": "ToVgXFPJ"
+                "collection": "rCxdIbZN"
             }
             headers = {
                 "accept": "application/json",
