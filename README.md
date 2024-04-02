@@ -2,7 +2,7 @@
 
 The PlacemenTrack is a cutting-edge application that revolutionizes the way educational institutions, students, and recruiters approach campus placements. This app harnesses the power of data analysis, machine learning, and web technologies to provide a comprehensive solution for optimizing the placement process.
 
-#### Website Live URL: https://placementrack-frontend-nomig6337-dev.apps.sandbox-m3.1530.p1.openshiftapps.com/placement-insights
+#### Website Live URL: https://campus-placement-analysis.onrender.com/
 
 ## Docker images:
 
